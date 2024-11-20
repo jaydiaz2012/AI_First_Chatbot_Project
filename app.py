@@ -279,9 +279,9 @@ elif options == "SalesX AI":
             # Create an index for the forecasted periods
             forecast_index = range(len(data), len(data) + len(forecast))
             plt.plot(forecast_index, forecast, color='r', linestyle='--', label='Forecasted Sales')
-
+    
             plt.title('Sales Data and Forecast')
             plt.xlabel('Time Period')
-            plt.ylabel(sales_column)
+            plt.ylabel(sales_columns)
             plt.legend()
             st.pyplot(plt)
