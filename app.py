@@ -287,6 +287,6 @@ elif options == "SalesX AI":
     
             plt.title('Sales Data and Forecast')
             plt.xlabel('Time Period')
-            plt.ylabel(sales_columns)
+            plt.ylabel('Sales")
             plt.legend()
             st.pyplot(plt)
