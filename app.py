@@ -122,7 +122,7 @@ if 'messages' not in st.session_state:
     st.session_state.messages = []
 
 # Function to forecast revenue
-def forecast_revenue(data, sales_column):
+def forecast_sales(data, sales_column):
     # Prepare the input for the GPT model
     sales_data = data[sales_column].tolist()
     sales_data_str = ', '.join(map(str, sales_data))
@@ -265,8 +265,8 @@ elif options == "SalesX AI":
             sales_column = 'Sales'  # Set default sales column for manual entry
 
     if 'data' in locals() and 'sales_column' in locals():
-        if st.button("Forecast Revenue"):
-            forecast = forecast_revenue(data, sales_column)
+        if st.button("Forecast Sales"):
+            forecast = forecast_sales(data, sales_column)
             st.write("Forecasted Revenue:", forecast)
 
             explanation = generate_explanation(data, forecast)
