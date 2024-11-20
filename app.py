@@ -267,7 +267,7 @@ elif options == "SalesX AI":
     if 'data' in locals() and 'sales_column' in locals():
         if st.button("Forecast Sales"):
             forecast = forecast_sales(data, sales_column)
-            st.write("Forecasted Revenue:", forecast)
+            st.write("Forecasted Sales:", forecast)
 
             explanation = generate_explanation(data, forecast)
             st.write("Explanation:", explanation)
@@ -278,7 +278,7 @@ elif options == "SalesX AI":
 
             # Create an index for the forecasted periods
             forecast_index = range(len(data), len(data) + len(forecast))
-            plt.plot(forecast_index, forecast, color='r', linestyle='--', label='Forecasted Revenue')
+            plt.plot(forecast_index, forecast, color='r', linestyle='--', label='Forecasted Sales')
 
             plt.title('Sales Data and Forecast')
             plt.xlabel('Time Period')
