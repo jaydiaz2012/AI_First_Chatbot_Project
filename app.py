@@ -273,7 +273,7 @@ elif options == "SalesX AI":
             st.write("Explanation:", explanation)
 
             # Visualization
-            st.line_chart(forecast_sales[data, sales_column)
+            st.line_chart(forecast_sales[data, sales_column])
             #plt.figure(figsize=(10, 5))
             #plt.plot(data.index, data[sales_column], label='Sales Data', marker='o')
 
