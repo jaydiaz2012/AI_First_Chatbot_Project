@@ -3,6 +3,7 @@ import openai
 import numpy as np
 import pandas as pd
 import json
+import matplotlib.pyplot as plt 
 from langchain.chat_models import ChatOpenAI
 from langchain.document_loaders import CSVLoader
 from langchain.embeddings import OpenAIEmbeddings
