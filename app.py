@@ -276,8 +276,7 @@ elif options == "SalesX AI":
             #st.write("Explanation:", explanation)
 
             # Visualization
-            st.line_chart(data, sales_column)
-            st.line_chart(forecast)
+            #st.line_chart(forecast)
             #fig, ax = plt.subplots(figsize=(8, 5))
             #plt.figure(figsize=(10, 5))
             #plt.plot(data.index, data[sales_column], label='Sales Data', marker='o')
@@ -286,8 +285,10 @@ elif options == "SalesX AI":
             #forecast_index = range(len(data), len(data) + len(forecast))
             #plt.plot(forecast_index, forecast, color='r', linestyle='--', label='Forecasted Sales')
     
-            #plt.title('Sales Data and Forecast')
-            #plt.xlabel('Time Period')
-            #plt.ylabel('Sales')
-            #plt.legend()
+            plt.title('Sales Data and Forecast')
+            plt.xlabel('Time Period')
+            plt.ylabel('Sales')
+            plt.legend()
+            st.line_chart(forecast)
+            plt.show()
             #st.pyplot(plt)
