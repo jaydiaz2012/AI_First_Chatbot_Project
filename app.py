@@ -106,7 +106,7 @@ with st.sidebar:
     st.write("1. Enter a valid OpenAI API Key.")
     st.write("2. Click SalesX AI on the Sidebar to get started!")
     st.write("3. Input your sales data.")
-    st.write("4. Click 'Forecast Revenue' to see the predictions.")
+    st.write("4. Click 'Forecast Sales' to see the predictions.")
     
     if st.button("Reset"):
         st.session_state.clear()  # Clear session state to reset the app
@@ -233,7 +233,7 @@ if options == "Home":
 elif options == "About Me":
     st.title("About Me")
     My_image = Image.open("images/photo-me1.jpg")
-    my_resized_image = My_image.resize((480,400))
+    my_resized_image = My_image.resize((400,320))
     st.image(my_resized_image)
     st.write("I am Jeremie Diaz, an AI builder and programmer.")
     st.write("Don't hesitate to contact me on my LinkedIn and check out my other projects on GitHub!")
