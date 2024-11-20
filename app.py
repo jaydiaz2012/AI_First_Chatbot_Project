@@ -2,14 +2,27 @@ import os
 import openai
 import numpy as np
 import pandas as pd
+import json
+from langchain.chat_models import ChatOpenAI
+from langchain.document_loaders import CSVLoader
+from langchain.embeddings import OpenAIEmbeddings
+from langchain.prompts import ChatPromptTemplate
+from langchain.vectorstores import Chroma
+from langchain_core.output_parsers import StrOutputParser
+from langchain_core.runnables import RunnableLambda, RunnablePassthrough
+from openai.embeddings_utils import get_embedding
 import faiss
+import warnings
+from PIL import Image
 import streamlit as st
 import warnings
-from openai.embeddings_utils import get_embedding
-from langchain_community.embeddings import OpenAIEmbeddings  # Updated import
-from streamlit_option_menu import option_menu  # Ensure this import is present
-from PIL import Image
-import matplotlib.pyplot as plt
+from streamlit_option_menu import option_menu
+from streamlit_extras.mention import mention
+import base64
+import random
+from datetime import datetime, timedelta
+import requests
+import json
 
 warnings.filterwarnings("ignore")
 
