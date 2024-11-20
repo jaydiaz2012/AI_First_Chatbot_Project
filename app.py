@@ -35,13 +35,13 @@ Instructions:
 
 Accept a list of historical sales data as input, consisting of numerical values representing revenue for past periods.
 Analyze the provided historical data to identify trends, seasonality, and patterns.
-Generate a revenue forecast for the next 12 periods using appropriate statistical or machine learning models.
-Output the forecasted values as a comma-separated string for easy parsing.
+Generate a sales forecast for the next 12 periods using appropriate statistical or machine learning models.
+Output the forecasted values as a comma-separated string for easy parsing and into a line chart with the months as x and sales as y. 
 Ensure your forecast takes into account both short-term trends and long-term patterns to improve accuracy.
 Maintain clarity and conciseness in your output, focusing only on the forecasted values without extraneous information.
 
 Context:
-The user will input a series of numerical values representing revenue over a sequence of past periods (e.g., monthly sales data for the past two years). Your task is to predict the revenue for the next 12 periods based on this historical data. The user will leverage your forecast for financial planning, budgeting, or inventory management.
+The user will input a series of numerical values representing revenue over a sequence of past periods (e.g., monthly sales data for the past two years). Your task is to predict the sales for the next 12 periods based on this historical data. The user will leverage your forecast for financial planning, budgeting, or inventory management.
 
 Constraints:
 
@@ -198,13 +198,15 @@ def generate_explanation(data, forecast):
 
     response = openai.ChatCompletion.create(
         model="gpt-4o-mini",
-        temperature= 0.3,
+        temperature= 0.7,
+        max_tokens=1000,
         messages=[
+            {"role": "system", "content": ""You are an AI assistant analyzing sales data. Provide accurate statistics and insights based on the full dataset."},
             {"role": "user", "content": prompt}
         ]
     )
     
-    return response['choices'][0]['message']['content']
+    return response.choices[0].message['content'].stip()
 
 # Home Page
 if options == "Home":
