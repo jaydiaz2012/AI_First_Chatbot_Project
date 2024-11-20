@@ -98,7 +98,7 @@ with st.sidebar:
     # Check if the API key is valid
     if api_key and api_key.startswith('sk-'):  # Removed length check
         openai.api_key = api_key
-        st.success('API key is valid. Proceed to enter your shipment details!', icon='👉')
+        st.success('API key is valid. Proceed to enter your sales data!', icon='👉')
     else:
         st.warning('Please enter a valid OpenAI API token!', icon='⚠️')
 
@@ -233,7 +233,7 @@ if options == "Home":
 elif options == "About Me":
     st.title("About Me")
     My_image = Image.open("images/photo-me1.jpg")
-    my_resized_image = My_image.resize((250,250))
+    my_resized_image = My_image.resize((480,400))
     st.image(my_resized_image)
     st.write("I am Jeremie Diaz, an AI builder and programmer.")
     st.write("Don't hesitate to contact me on my LinkedIn and check out my other projects on GitHub!")
